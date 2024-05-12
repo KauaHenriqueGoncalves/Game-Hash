@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+    --red: #ff2222;
+    --blue: #2222ff;
+    --background-color: #181818;
+}
+
+html {
+    font-family: 'VT323', sans-serif;
+    font-size: 62.5%;
+}
+
+body {
+    min-height: 100vh;
+    user-select: none;
+    overflow: hidden;
+    background: var(--background-color);    
+}
+
+.telaPlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+    transition: .5s ease-in-out;
+}
+
+.telaPlay > p {
+    margin: 0;
+    font-size: 6rem;
+    text-transform: uppercase;
+    color: #f2f2f2;
+}
+
+.resultPlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    opacity: 1;
+    backdrop-filter: blur(2px);
+}
+
+.resultPlay > p {
+    margin: 0;
+    font-size: 6rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #f2f2f2;
+    width: 100vw;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player > p {
+    margin: 0;
+    padding: 1em;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: .25s ease-in-out;
+}
+
+.playerRed {
+    color: #ff2222;
+}
+
+.playerBlue {
+    color: #2222ff;
+}
+
+.playNowRed {
+    transform: scale(1.2);
+    text-shadow: 0px 0px 10px var(--red);
+}
+
+.playNowBlue {
+    transform: scale(1.2);
+    text-shadow: 0px 0px 10px var(--blue);
+}
+
+.playerPoints {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #ddd;
+}
+
+.containerGame {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: .15rem;
+    width: 45rem;
+    aspect-ratio: 1 / 1;
+}
+
+.game .block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    background: #262a35;
+    cursor: pointer;
+    transition: .5s ease-in-out;
+}
+
+.fa-circle {
+    font-size: 10rem;
+    text-shadow: 0px 0px 10px var(--blue);
+    color: var(--blue);
+}
+
+.fa-x {
+    font-size: 10rem;
+    text-shadow: 0px 0px 10px var(--red);
+    color: var(--red);
+}
+
+@media screen and (max-width: 520px) {
+    .playerRed, .playerBlue {
+        font-size: 1rem;
+    }
+
+    .playerPoints {
+        font-size: 2.5rem;
+    }
+
+    .game {
+        width: 35rem;
+    }
+
+    .containerGame {
+        margin-top: 6rem;
+    }
+
+    .fa-x, .fa-circle {
+        font-size: 8rem;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .header {
+        flex-direction: column;
+    }
+
+    .player > p {
+        padding: .1;
+    }
+
+    .containerGame {
+        margin-top: 1rem;
+    }
+
+    .game {
+        width: 28rem;
+    }
+
+    .fa-x, .fa-circle {
+        font-size: 6rem;
+    }
+
+    .telaPlay > p {
+        font-size: 4rem;
+    }
+
+    .resultPlay > p {
+        font-size: 4rem;
+    }
+}
